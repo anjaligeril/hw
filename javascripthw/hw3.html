@@ -1,0 +1,35 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Student Course Grade</title>
+		<script>
+				
+				function convert()
+				{
+					var mark=document.getElementById("mark").value;
+					if(mark < 60.0){
+						document.getElementById("result").innerHTML= "The grade is F";
+					}
+					else if((mark >= 60.0) && (mark <= 69.5)){
+						document.getElementById("result").innerHTML= "The grade is D";
+					}
+					else if((mark >= 69.6) && (mark <= 79.5)){
+						document.getElementById("result").innerHTML= "The grade is C";
+					}
+					else if((mark >= 79.6) && (mark <= 89.5)){
+						document.getElementById("result").innerHTML= "The grade is B";
+					}
+					else {
+						document.getElementById("result").innerHTML= "The grade is A";
+					}
+				}
+		</script>
+	</head>
+	<body>
+		<h1>Student Course Grade</h1><br><br>
+		<input type="text" name="Mark" placeholder="Enter the mark" id="mark"><br> <br>
+		<button type="button" onclick="convert()">Convert to Grade</button><br><br>
+		<h3 id="result"></h3>
+		
+	</body>
+</html>

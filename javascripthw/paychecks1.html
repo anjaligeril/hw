@@ -1,0 +1,59 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Employee net pay</title>
+		<script>
+		    function Calculate() {
+				var HourlyPayRate=document.getElementById("hourlypayrate").value;
+				var HoursPerWeek=document.getElementById("hoursperweek").value;	
+				var NumDependents=document.getElementById("numdependents").value;
+				var GrossPay
+				if(HoursPerWeek>40){
+					var OverTime=HoursPerWeek-40;
+					GrossPay=(HourlyPayRate*40)+(1.5*HourlyPayRate*OverTime);
+				}
+				else {
+					GrossPay=HourlyPayRate*HoursPerWeek;
+				}
+				var Tax
+				if(NumDependents==0 && GrossPay > 1000) {
+					Tax=(GrossPay*33)/100;
+				}
+				else if(NumDependents==0 && GrossPay <= 1000) {
+					Tax=(GrossPay*28)/100;
+				}
+				else if((NumDependents >=1 && NumDependents<=3)&& GrossPay > 1000) {
+					Tax=(GrossPay*25)/100;
+				}
+				else if((NumDependents >=1 && NumDependents<=3)&& GrossPay <= 1000) {
+					Tax=(GrossPay*22)/100;
+				}
+				else if((NumDependents >=4 && NumDependents<=6)&& GrossPay > 1000) {
+					Tax=(GrossPay*22)/100;
+				}
+				else if((NumDependents >=4 && NumDependents<=6)&& GrossPay <= 1000) {
+					Tax=(GrossPay*15)/100;
+				}
+				else {
+					if(GrossPay > 1000){
+						Tax=(GrossPay*15)/100;
+					}
+					else {
+						Tax=(GrossPay*10)/100;
+					}
+				}
+				var NetIncome=GrossPay-Tax;
+				document.getElementById("result").innerHTML= NetIncome; 
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Employee net pay</h1><br><br>
+		<input type="text" name="hourlypayrate" placeholder="Enter Employee Hourly Pay Rate" id="hourlypayrate"><br> <br>
+		<input type="text" name="hoursperweek" placeholder="Enter Number of hours worked per week" id="hoursperweek"><br> <br>
+		<input type="text" name="numdependents" placeholder="Enter Number of depentands claimed" id="numdependents"><br> <br>
+		<button type="button" onclick="Calculate()">Calculate Income</button><br><br>
+		<h3>Net Weekly Income</h3>
+		<h3 id="result"></h3>	
+	</body>
+</html>

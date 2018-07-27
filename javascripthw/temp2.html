@@ -1,0 +1,39 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Weather Forecaster</title>
+		<script>
+				
+				function Message()
+				{
+					var Temperature=document.getElementById("temp").value;
+				 		 
+					if(Temperature<0){
+						document.getElementById("result").innerHTML= "Bundle up!Its really freezing out there!";
+					}
+					else if((Temperature >= 0)&&(Temperature <= 32)){
+						document.getElementById("result").innerHTML= "Pretty cold with a chance of snow";
+					}
+					else if((Temperature >= 33)&&(Temperature <= 59)){
+						document.getElementById("result").innerHTML= "Dont forget your jacket .Its still chilly outside.";
+					}
+					else if((Temperature >= 60)&&(Temperature <= 80)){
+						document.getElementById("result").innerHTML= "Perfectly lovely weather...unless it rains.";
+					}
+					else if((Temperature >= 81)&&(Temperature <= 95)){
+						document.getElementById("result").innerHTML= "Nice and warm.Go for a swim";
+					}
+					else {
+						document.getElementById("result").innerHTML= "Its really hot.Probably best to stay in an air conditioned spot";
+					}
+					
+				}
+		</script>
+	</head>
+	<body>
+		<h1>Weather Forecaster</h1><br><br>
+		<input type="text" name="Temperature" placeholder="Temperature in Fahrenheit" id="temp"><br><br>
+		<button type="button" onclick="Message()">Message</button><br><br>
+		<h3 id="result"></h3>
+	</body>
+</html>

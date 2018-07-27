@@ -1,0 +1,32 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Temperature Converter</title>
+		<script>
+				
+				function convert(value)
+				{
+				 		 
+				 if(value==1){
+					var Temperature=document.getElementById("temp").value;
+					var celsius=((5/9)*(Temperature-32));
+					alert("Temperature in Celsius " + celsius);
+					
+				}
+				else{
+					var Temperature1=document.getElementById("temp1").value;
+					var Fahrenheit=(((9/5)*Temperature1)+32);
+					alert("Temperature in Fahrenheit " + Fahrenheit);
+				}
+				}
+		</script>
+	</head>
+	<body>
+		<h1>Temperature Converter</h1><br><br>
+		<input type="text" name="Temperature" placeholder="Temperature in Fahrenheit" id="temp"><br><br>
+		<button type="button" onclick="convert(1)">Convert to Celsius</button><br><br>
+		<input type="text" name="Temperature" placeholder="Temperature in Celsius " id="temp1"><br><br>
+		<button type="button" onclick="convert(2)">Convert to Fahrenheit</button><br><br>
+		
+	</body>
+</html>

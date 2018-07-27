@@ -1,0 +1,53 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Employee net pay</title>
+		<script>
+			var HourlyPayRate=prompt("Enter Employee Hourly Pay Rate");	
+			var HoursPerWeek=prompt("Enter Number of hours worked per week");	
+			var NumDependents=prompt("Enter Number of depentants claimed");
+			var GrossPay
+			if(HoursPerWeek>40){
+				var OverTime=HoursPerWeek-40;
+				GrossPay=(HourlyPayRate*40)+(1.5*HourlyPayRate*OverTime);
+				
+			}
+			else {
+				GrossPay=HourlyPayRate*HoursPerWeek;
+				
+			}
+			var Tax
+			if(NumDependents==0 && GrossPay > 1000) {
+				Tax=(GrossPay*33)/100;
+			}
+			else if(NumDependents==0 && GrossPay <= 1000) {
+				Tax=(GrossPay*28)/100;
+			}
+			else if((NumDependents >=1 && NumDependents<=3)&& GrossPay > 1000) {
+				Tax=(GrossPay*25)/100;
+			}
+			else if((NumDependents >=1 && NumDependents<=3)&& GrossPay <= 1000) {
+				Tax=(GrossPay*22)/100;
+			}
+			else if((NumDependents >=4 && NumDependents<=6)&& GrossPay > 1000) {
+				Tax=(GrossPay*22)/100;
+			}
+			else if((NumDependents >=4 && NumDependents<=6)&& GrossPay <= 1000) {
+				Tax=(GrossPay*15)/100;
+			}
+			else {
+			    if(GrossPay > 1000){
+					Tax=(GrossPay*15)/100;
+				}
+				else {
+					Tax=(GrossPay*10)/100;
+				}
+			}
+			var NetIncome=GrossPay-Tax;
+			alert("Net Weekly Income "+NetIncome);
+		</script>
+	</head>
+	<body>
+			
+	</body>
+</html>
