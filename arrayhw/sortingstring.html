@@ -1,0 +1,36 @@
+<!Doctype html>
+
+<html lang="en">
+
+	<head>
+		<script>
+		var Name=[];
+		var num=parseInt(prompt("Enter the number of names in the array"));
+		for ( var i=0;i<num;i++)
+		{
+			Name[i]=prompt("enter the name");
+		}
+		var Length=Name.length;
+		alert(" Array before sorting  "+Name);
+		var temp=0;
+		for( var i=0;i<Length;i++){
+			for( var j=0;j<Length-1;j++){
+			
+			    if (Name[j] > Name[j+1]){
+					temp=Name[j+1];
+					Name[j+1]=Name[j];
+					Name[j]=temp;
+				 
+				}
+			}
+		}
+		alert(" Array after sorting   "+Name);
+		</script>
+	</head>
+
+	<body>
+  
+
+	</body>
+
+</html>

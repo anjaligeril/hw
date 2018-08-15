@@ -1,0 +1,36 @@
+<!Doctype html>
+
+<html lang="en">
+
+	<head>
+		<script>
+		var Number=[];
+			var num=parseInt(prompt("Enter the number of elements in the array"));
+			for ( var i=0;i<num;i++)
+			{
+				Number[i]=parseInt(prompt("enter the number"));
+			}
+		var Value=parseInt(prompt("Enter the number to be searched"));
+		var Length=Number.length;
+		var flag=false;
+		for( var i=0;i<Length;i++){
+			if(Number[i]==Value){
+				flag=true;
+				
+			}
+		}
+		if(flag==true){
+				alert(Value+" is in the array ");
+		}
+		else{
+			alert(Value+" is not in the array ");
+		}
+		</script>
+	</head>
+
+	<body>
+  
+
+	</body>
+
+</html>
