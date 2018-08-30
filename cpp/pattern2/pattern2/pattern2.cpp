@@ -8,14 +8,14 @@ using namespace std;
 
 int main()
 {
-	int count=1;
+	int space=1;
 	for (int i = 5; i >= 1; i--)
 	{
 		for (int j = 1; j <= i; j++) {
 			cout << "*";
 		}
-		if (count > 1) {
-			for (int k = 1; k < count; k++) {
+		if (space > 1) {
+			for (int k = 1; k < space; k++) {
 				cout << " ";
 				cout << " ";
 			}
@@ -25,16 +25,16 @@ int main()
 		}
 
 		cout << "\n";
-		count++;
+		space++;
 	}
-	count = 5;
+	space = 5;
 	for (int i = 1; i <=5; i++)
 	{
 		for (int j = 1; j <= i; j++) {
 			cout << "*";
 		}
-		if (count >1) {
-			for (int k = count; k >1; k--) {
+		if (space >1) {
+			for (int k = space; k >1; k--) {
 				cout << " ";
 				cout << " ";
 			}
@@ -44,7 +44,7 @@ int main()
 		}
 
 		cout << "\n";
-		count--;
+		space--;
 	}
 
 	system("pause");
